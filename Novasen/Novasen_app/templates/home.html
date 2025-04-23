@@ -1,0 +1,77 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Novasen{% endblock %}</title>
+    <link rel="stylesheet" href="{% static 'css/index.css' %}">
+    <link rel="icon" type="image/x-icon" href="{% static 'img/logo.proyect.jpg' %}">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo">
+            <img src="{% static 'img/logo.proyect.jpg' %}" alt="Logo">
+        </div>
+
+        <!-- Icono de menú hamburguesa -->
+        <nav>
+            <ul class="menu"> 
+                <li><a href="{% url 'home' %}" class="nav-link"><i class="fa fa-home"></i></a></li>
+                <li><a href="inicio_sesion">Inicio sesión</a></li>
+                <li><a href="insertar">Registrar</a>
+                    <ul>
+                        <li><a href="insertar_provincia">Insertar Provincia</a></li>
+                        <li><a href="insertar_ciudad">Insertar Ciudad</a></li>
+                        <li><a href="insertar_rol">Insertar Rol</a></li>
+                        <li><a href="insertar_usuario">Insertar Usuario</a></li>  
+                        <li><a href="insertar_regional">Insertar Regional</a></li>
+                        <li><a href="insertar_sedes">Insertar Sedes</a></li>
+                        <li><a href="insertar_ambiente">Insertar ambiente</a></li>
+                        <li><a href="insertar_ficha">Insertar ficha</a></li>
+                        <li><a href="insertar_programas">Insertar Programas</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="listar">Listar</a>
+                    <ul>
+                        <li><a href="listar_provincia">Listar Provincia</a></li>
+                        <li><a href="listar_ciu">Listar Ciudad</a></li>
+                        <li><a href="listar">Listar Rol</a></li>
+                        <li><a href="listar_usu">Listar Usuario</a></li>
+                        <li><a href="listar_regional">Listar Regional</a></li>
+                        <li><a href="listar_sedes">Listar Sedes</a></li>
+                        <li><a href="listar_ambiente">Listar ambiente</a></li>
+                        <li><a href="listar_ficha">Listar ficha</a></li>
+                        <li><a href="listar_programas">Listar Programas</a></li>
+                    </ul>
+                </li>
+
+                <li><a href="novedades">Novedades</a>
+                </li>
+            </ul>
+        </nav>
+        
+    </header>
+
+    <main>
+        {% block content %}
+        <section id="home">
+            <h1>Bienvenidos A Novasen</h1>
+            <p>Explora nuestros servicios y contáctanos para más información.</p>
+        </section>
+        {% endblock %}
+    </main>
+
+    <footer>
+        <div class="footer-info">
+            <p>&copy; 2025 Novasen. Todos los derechos reservados.</p>
+            <p>Contacto: <a href="mailto:info@novasen.com">info@novasen.com</a> | Tel: +57 310 000 0000</p>
+        </div>
+    </footer>
+</body>
+</html>

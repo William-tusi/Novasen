@@ -1,0 +1,34 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+    Listado de Ambientes
+{% endblock %}
+
+{% block content %}
+<h1>Listado de Ambientes</h1>
+
+<table>
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Piso</th>
+            <th>Salón</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for ambiente in ambientes %}
+        <tr>
+            <td>{{ ambiente.id }}</td>
+            <td>{{ ambiente.piso }}</td>
+            <td>{{ ambiente.salon }}</td>
+            <td>
+                <a href="{% url 'actualizar_ambiente' ambiente.id %}">Actualizar</a>
+                <a href="{% url 'eliminar_ambiente' ambiente.id %}">Eliminar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  mistercandado Blog
+{% endblock %}
+
+<head>
+
+</head>  
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="{{rol.nombre}}"   required>
+    
+    <label for="descripcion"> descripcion:</label>
+    <input type="text" id="descripcion" name="descripcion" value="{{rol.descripcion}}"  required>
+    
+    <br><button type="submit">Enviar</button><br>
+</form>
+  {% endblock %}

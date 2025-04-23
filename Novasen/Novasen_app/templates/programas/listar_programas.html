@@ -1,0 +1,36 @@
+{% extends 'index.html'%}
+
+{% load static %}
+
+{% block title %}
+    Lista cuidad
+{% endblock %}
+
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>Horas</th>
+            <th>version</th>
+            <th>Nombre</th>
+          
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in programas %}
+        <tr>
+            <td>{{ p.codigo }}</td>
+            <td>{{ p.horas }}</td>
+            <td>{{ p.version }}</td>
+            <td>{{ p.nombre }}</td>
+           
+           
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

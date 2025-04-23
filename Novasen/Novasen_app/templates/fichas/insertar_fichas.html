@@ -1,0 +1,33 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+ insertar ficha Blog
+{% endblock %}
+
+<head>
+
+</head>
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+    <label for="ficha">ficha:</label>
+    <input type="text" id="ficha" name="ficha" required>
+
+    <label for="nombre">nombre</label>
+    <input type="text" name="nombre" id="nombre">
+
+    <div>
+      <label for="ambientes_id">Ambiente:</label>
+      <select name="ambientes_id" id="ambientes_id" required>
+          {% for ambiente in ambientes %}
+              <option value="{{ ambientes.id }}">{{ ambiente.nombre }}</option>
+          {% endfor %}
+      </select>
+    </div>
+  <br><button type="submit">Enviar</button><br>
+</form>
+{% endblock %}

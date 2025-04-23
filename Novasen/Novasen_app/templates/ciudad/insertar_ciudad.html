@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+ Insertar cuidad Blog
+{% endblock %}
+
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+<div>
+  <label for="codigo">Codigo:</label>
+  <input type="text" id="codgio" name="codigo" required>
+</div>
+<div>
+  <label for="ciudad">Ciudad</label>
+  <select id="ciudad" name="ciudad" required>
+    <option value="">Selecciona una sede</option>
+    <option value="bogota">Bogotá</option>
+    <option value="medellin">Medellín</option>
+    <option value="california">Cali</option>
+    <option value="barranquilla">Barranquilla</option>
+    <option value="cartagena">Cartagena</option>
+    <option value="soledad">Soledad</option>
+    <option value="cucuta">Cúcuta</option>
+    <option value="bucaramanga">Bucaramanga</option>
+    <option value="pereira">Pereira</option>
+    <option value="santa_marta">Santa Marta</option>
+    <option value="manizales">Manizales</option>
+    <option value="chiquinquira">Chiquinquirá</option>
+    <option value="neiva">Neiva</option>
+    <option value="popayan">Popayán</option>
+    <option value="monteria">Montería</option>
+    <option value="pasto">Pasto</option>
+    <option value="armenia">Armenia</option>
+    <option value="villavicencio">Villavicencio</option>
+    <option value="tunja">Tunja</option>
+    <option value="sincelejo">Sincelejo</option>    
+  </select>
+</div>
+<div>
+  <label for="provincias_id">Provincia:</label>
+  <select name="provincias_id" id="provincias_id" required>
+      {% for provincia in provincias %}
+          <option value="{{ provincia.id }}">{{ provincia.provincia}}</option>
+      {% endfor %}
+  </select>
+</div>
+  <br><button type="submit">Enviar</button><br>
+</form>
+{% endblock %}

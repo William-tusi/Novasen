@@ -1,0 +1,35 @@
+{% extends 'index.html'%}
+
+{% load static %}
+
+{% block title %}
+    Lista ciudad
+{% endblock %}
+
+<head>
+
+</head>
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>piso</th>
+            <th>salon</th>
+            
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for f in ficha %}
+        <tr>
+            <td>{{ f.piso }}</td>
+            <td>{{ f.salon }}</td>
+        td>
+           
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

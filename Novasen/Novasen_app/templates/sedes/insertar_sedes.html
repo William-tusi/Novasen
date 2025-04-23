@@ -1,0 +1,44 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+ insertar sedesBlog
+{% endblock %}
+
+<head>
+
+</head>
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+    <label for="codigo">Código:</label>
+    <input type="text" id="codigo" name="codigo" required>
+
+  <label for="nombre">Nombre:</label>
+  <select id="nombre" name="nombre" required>
+    <option value="">Selecciona una sede</option>
+    <option value="Sede cide">Sede Cide</option>
+    <option value="Sede sibate">Sede Sibate</option>
+    <option value="Sede ciudad verder">Sede Ciudad Verde</option>
+    <option value="Sede tecno parque sena">Sede  Tecno Parque Sena </option>
+  </select>
+  
+
+  <label for="direccion">Direccion</label>
+  <input type="text" name="direccion" id="direccion">
+
+  <div>
+    <label for="regional_id">Regional:</label>
+    <select name="regional_id" id="regional_id">
+        {% for regional in regionales %}
+            <option value="{{regional.id}}" {% if regional.id == selected_regional_id %}selected{% endif %}>{{regional.nombre}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  
+  <br><button type="submit">Enviar</button><br>
+</form>
+{% endblock %}

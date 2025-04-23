@@ -1,0 +1,34 @@
+{% extends 'index.html'%}
+
+{% load static %}
+
+{% block title %}
+    Lista cuidad
+{% endblock %}
+
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>Codigo</th>
+            <th>provincia</th>
+            <th>Eliminar</th>
+            <th>Actualizar</th>
+            
+            
+        </tr>
+    </thead>
+    <tbody>
+        {% for p in provincia %}
+        <tr>
+            <td>{{ p.codigo }}</td>
+            <td>{{ p.provincia }}</td>
+            <td><a href="{% url 'eliminar_provincia' p.id %}">Eliminar</a></td>
+            <td><a href="{% url 'actualizar_provincia' p.id %}">Actualizar</a></td>
+           
+        {% endfor%}
+    </tbody>
+</table>
+{% endblock %}

@@ -1,0 +1,22 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+  Actualizar Ambiente
+{% endblock %}
+
+{% block content %}
+  <h1>Actualizar Ambiente</h1>
+  <form method="POST">
+    {% csrf_token %}
+    
+    <label for="piso">Piso:</label>
+    <input type="text" id="piso" name="piso" value="{{ ambiente.piso }}" required><br><br>
+
+    <label for="salon">Salón:</label>
+    <input type="text" id="salon" name="salon" value="{{ ambiente.salon }}" required><br><br>
+
+    <button type="submit">Actualizar</button>
+  </form>
+{% endblock %}

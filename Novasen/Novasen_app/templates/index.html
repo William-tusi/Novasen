@@ -1,0 +1,60 @@
+{% load static %}
+{% block title %}{% endblock %}
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/home.css' %}">
+<link rel="icon" type="image/x-icon" href="{% static 'img/logo.proyect.jpg' %}">
+{% endblock %}
+
+{% block content %}
+
+<!-- Encabezado principal -->
+<section id="home" class="home-section">
+  <div class="titulo principal">
+    <h1>Bienvenidos a Novasen</h1>
+    <p>Explora nuestros servicios y contáctanos para más información.</p>
+  </div>
+  
+  <div class="logo">
+      <img src="{% static 'img/logo.proyect.jpg' %}" alt="Logo">
+  </div>
+<!-- Barra de Búsqueda -->
+<div class="search-container">
+<input type="text" placeholder="Buscar programas, servicios, información..." class="search-input">
+<button class="search-btn">🔍</button>
+</div>
+
+</section>
+
+
+<!-- Imagen destacada o slider -->
+<section class="banner">
+    <img src="{% static 'img/banner.png' %}" alt="Banner Novasen" class="banner-img">
+</section>
+
+<!-- Bloque de Registro e Ingreso -->
+<div class="login-container">
+  <div class="login-card">
+    <div class="icon">👤</div>
+    <p><strong>Regístrese :</strong> Cree su cuenta para gestionar y consultar novedades en el sistema.</p>
+    <button class="btn"><a href="{% url 'insertar_usuario' %}" class="btn-principal">Regístrate Ahora</a></button>
+
+  </div>
+
+  <div class="login-card">
+    <div class="icon" aria-hidden="true">🔑</div>
+    <p><strong>Ingrese :</strong> para acceder al sistema si ya está registrado.</p>
+    <a href="{% url 'login' %}" class="btn btn-principal">Iniciar sesión</a>
+  </div>
+  
+</div>
+<!-- Llamado a la acción -->
+<section class="cta">
+    <ul>
+      <p>&copy; 2025 Novasen un proyecto innovador Version beta</p>
+      <p>Contacto: <a href="mailto:info@novasen.com">info@novasen.com</a> | Tel: +57 310 000 0000</p>
+    </ul>
+</section>
+
+
+<script src="{% static 'js/buscador.js' %}"></script>
+{% endblock %}

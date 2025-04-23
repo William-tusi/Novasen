@@ -1,0 +1,237 @@
+/* ========================== */
+/* ===== GENERAL STYLES ===== */
+/* ========================== */
+
+body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    background-image: url('https://cloudfront-us-east-1.images.arcpublishing.com/prisaradioco/UGZJZJUJNFCKXGYMB4FGX6WTEE.jpg');
+    background-size: cover;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background-color: #eaf4ed;
+    color: #333;
+}
+
+
+/* ============================= */
+/* ===== HEADER / NAVBAR ======= */
+/* ============================= */
+
+.navbar {
+    background: linear-gradient(to right, #024405, #ffffff);
+    color: rgb(0, 0, 0);
+    display: flex;
+    align-items: center;
+    position: relative; /* Necesario para usar top */
+    top: -66px; /* Esto sube la barra de navegación */
+    padding: 10px 40px; /* Asegúrate de definir un padding adecuado */
+
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+}
+
+.navbar-left, .navbar-center, .navbar-right {
+    flex: 1;
+    display: flex;
+    align-items: center;
+}
+
+.navbar-center {
+    justify-content: center;
+    font-size: 1.6rem;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.navbar-left {
+    justify-content: flex-start;
+}
+
+.navbar-right {
+    justify-content: flex-end;
+}
+
+
+.navegacion {
+    padding: 10px 30px;
+    border-radius: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.navegacion ul {
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+
+.navegacion li {
+    margin: 0 15px;
+    transition: transform 0.3s ease, color 0.3s ease;
+}
+
+.navegacion a {
+    color: rgb(0, 0, 0);
+    font-size: 1.5rem;
+    text-decoration: none;
+    display: flex;
+    justify-content: flex-start;
+    position: relative;
+    top: 10px;
+    border-radius: 100px;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    z-index: 10; /* Asegura que esté encima del encabezado */
+}
+
+
+.logo-proyecto {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+   
+}
+
+.logo-proyecto img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  
+    
+}
+
+.casa-navegacion {
+    height: 45px;
+    margin-left: 100px;
+    cursor: pointer;
+}
+
+/* ============================ */
+/* ===== FORM CONTAINER ===== */
+/* ============================ */
+
+.contenedor-login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 85vh;
+    padding: 20px;
+}
+
+.formulario-login {
+    background-color: #ffffff;
+    padding: 3rem;
+    border-radius: 12px;
+    width: 100%;
+    max-width: 400px;
+    text-align: center;
+    box-shadow: 0 6px 30px rgba(0, 0, 0, 0.15);
+    transition: transform 0.3s ease;
+    border: 1px solid #ccc;
+}
+
+.formulario-login:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 50px rgba(0, 0, 0, 0.2);
+}
+
+.formulario-login h2 {
+    color: #145A32;
+    font-size: 2rem;
+    margin-bottom: 0.8rem;
+}
+
+.formulario-login p {
+    margin-bottom: 2rem;
+    font-size: 1.05rem;
+    color: #333;
+}
+
+/* ========================== */
+/* ===== INPUT STYLES ===== */
+/* ========================== */
+
+.formulario-login label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: 600;
+    color: #0b5e28;
+    text-align: left;
+    font-size: 1rem;
+}
+
+.formulario-login input[type="text"],
+.formulario-login input[type="password"],
+.formulario-login select {
+    width: 100%;
+    padding: 14px;
+    font-size: 1rem;
+    margin-top: 6px;
+    border: 1.8px solid #ccc;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.formulario-login input:focus,
+.formulario-login select:focus {
+    border-color: #0b5e28;
+    outline: none;
+    background-color: #fff;
+    box-shadow: 0 0 8px rgba(11, 94, 40, 0.2);
+}
+
+/* ============================ */
+/* ===== SUBMIT BUTTON ===== */
+/* ============================ */
+
+.formulario-login button {
+    background-color: #145A32;
+    color: white;
+    border: none;
+    padding: 14px;
+    width: 100%;
+    font-size: 1.1rem;
+    border-radius: 8px;
+    margin-top: 20px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.formulario-login button:hover {
+    background-color: #000;
+    transform: scale(1.05);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.2);
+}
+
+/* ============================ */
+/* ===== RESPONSIVE DESIGN ===== */
+/* ============================ */
+
+@media (max-width: 768px) {
+    .navbar-center {
+        font-size: 1.3rem;
+    }
+
+    .logo {
+        height: 40px;
+    }
+
+    .icono-casa {
+        height: 30px;
+    }
+
+    .formulario-login {
+        padding: 2rem;
+    }
+
+    .formulario-login h2 {
+        font-size: 1.6rem;
+    }
+} 

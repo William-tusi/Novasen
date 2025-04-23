@@ -1,0 +1,26 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+  Actualizar provincia Blog
+{% endblock %}
+
+<head>
+
+</head>  
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  
+    <label for="codigo">Codigo:</label>
+    <input type="text" id="codigo" name="codigo" value="{{provincia.codigo}}"   required>
+    
+    <label for="nombre">Nombre:</label>
+    <input type="text" id="nombre" name="nombre" value="{{provincia.nombre}}"  required>
+    
+    <br><button type="submit">Enviar</button><br>
+</form>
+  {% endblock %}

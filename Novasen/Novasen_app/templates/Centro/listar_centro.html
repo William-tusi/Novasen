@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Lista de Centros</h2>
+
+  {% if centros %}
+    <table>
+      <thead>
+        <tr>
+          <th>ID</th>
+          <th>Nombre</th>
+          <th>Sede</th>
+          <th>Acciones</th>
+        </tr>
+      </thead>
+      <tbody>
+        {% for centro in centros %}
+        <tr>
+          <td>{{ centro.id }}</td>
+          <td>{{ centro.nombre }}</td>
+          <td>{{ centro.sede.nombre }}</td>
+          <td>
+            <a href="{% url 'detallar_centro' centro.id %}">Ver</a> |
+            {% if centro.id %}
+                <a href="{% url 'actualizar_centro' centro.id %}">Editar</a>
+            {% endif %}
+            <a href="{% url 'eliminar_centro' centro.id %}">Eliminar</a>
+          </td>
+        </tr>
+        {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <p>No hay centros registrados.</p>
+  {% endif %}
+
+  <br>
+  <a href="{% url 'insertar_centro' %}">Agregar nuevo centro</a>
+{% endblock %}
+

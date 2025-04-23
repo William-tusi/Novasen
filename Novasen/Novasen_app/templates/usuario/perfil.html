@@ -1,0 +1,36 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block title %}
+Perfil de Usuario
+{% endblock %}
+
+<link rel="stylesheet" href="{% static 'css/usuario.css' %}">
+
+{% block content %}
+<section class="profile-section">
+  <div class="profile-container">
+    <div class="profile-header">
+      <img src="{% static 'img/perfil_default.jpg' %}" alt="Foto de Perfil" class="profile-img">
+      <h2>{{ usuario.first_name }} {{ usuario.last_name }}</h2>
+      <p class="role">{{ usuario.rol.nombre }}</p>
+    </div>
+
+    <div class="profile-details">
+      <h3>Detalles del Perfil</h3>
+      <ul>
+        <li><strong>Tipo de Documento:</strong> {{ usuario.tipo_doc }}</li>
+        <li><strong>Número de Documento:</strong> {{ usuario.num_doc }}</li>
+        <li><strong>Correo electrónico:</strong> {{ usuario.email }}</li>
+        <li><strong>Teléfono:</strong> {{ usuario.telefono }}</li>
+        <li><strong>Fecha de registro:</strong> {{ usuario.date_joined|date:"d/m/Y" }}</li>
+      </ul>
+    </div>
+
+    <div class="profile-actions">
+      <a href="{% url 'editar_usuario' usuario.id %}" class="btn-edit">Editar Perfil</a>
+      <a href="{% url 'logout' %}" class="btn-logout">Cerrar sesión</a>
+    </div>
+  </div>
+</section>
+{% endblock %}

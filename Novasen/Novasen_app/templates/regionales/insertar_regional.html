@@ -1,0 +1,28 @@
+  {% extends 'base.html' %}
+
+  {% load static %}
+
+  {% block title %}
+  insertar regional Blog
+  {% endblock %}
+
+  <head>
+
+  </head>
+
+  {% block content %}
+
+  <form action="" method="POST">
+    {% csrf_token %}
+      <label for="nit">Nit:</label>
+      <input type="text" id="nit" name="nit" required>
+
+      <label for="nombre">nombre</label>
+      <input type="text" name="nombre" id="nombre">
+
+      <label for="ciudad">Ciudad</label>
+      <input type="text" name="ciudad" id="ciudad">
+
+      <br><button type="submit">Enviar</button><br>
+  </form>
+  {% endblock %}

@@ -1,0 +1,41 @@
+{% extends 'index.html' %}  
+{% load static %}
+
+{% block title %}
+   mister usuario
+{% endblock %}
+
+{% block content %}
+    <table>
+        <thead>
+            <tr>
+                <th>Tipo de Documento</th>
+                <th>Número de Documento</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Nombre de Usuario</th>
+                <th>Correo Electrónico</th>
+                <th>Teléfono</th>
+                <th>Rol</th>
+                <th>Eliminar</th>
+                <th>Actualizar</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for u in usuario %}
+                <tr>
+                    <td>{{ u.tipo_doc }}</td>
+                    <td>{{ u.num_doc }}</td>
+                    <td>{{ u.first_name }}</td>
+                    <td>{{ u.last_name }}</td>
+                    <td>{{ u.username }}</td>
+                    <td>{{ u.email }}</td>
+                    <td>{{ u.telefono }}</td>
+                    <td>{{ u.rol }}</td>
+                    <td><a href="{% url 'eliminar_usu' u.id %}">Eliminar</a></td>
+                    <td><a href="{% url 'actualizar_usu' u.id %}">Actualizar</a></td>
+                </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+{% endblock %}

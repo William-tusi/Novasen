@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+  mister rol Blog
+{% endblock %}
+
+<head>
+
+</head>  
+
+{% block content %}
+
+<form action="" method="POST">
+  {% csrf_token %}
+  
+<div>
+  <label for="rol">nombre un Rol:</label>
+  <select id="nombre" name="nombre" required>
+      <option value="aprendiz">Aprendiz</option>
+      <option value="instructor">Instructor</option>
+      <option value="coordinador_academico">Coordinador Académico</option>
+      <option value="lider_bienestar">Líder de Bienestar</option>
+      <option value="admin_edificio">Administrador de edificio</option>
+      <option value="Administrador del sistema">Administrador del sistema</option>
+  </select>
+</div>
+
+<div>
+    <label for="descripcion"> descripcion:</label>
+    <input type="text" id="descripcion" name="descripcion" required>
+</div>
+  
+<div>
+    <label for="codigo">codigo Rol:</label>
+    <select id="codigo" name="codigo" required>
+        <option value="ADM">Administrador del sistema</option>
+        <option value="CAC">coordinador_academico</option>
+        <option value="INS">Instructor</option>
+        <option value="ADE">Administrador de edificio</option>
+        <option value="LIB">lider_bienestar</option>
+        <option value="APR">Aprendiz</option>
+    </select>
+
+    <br><button type="submit">Enviar</button><br>
+</form>
+  {% endblock %}

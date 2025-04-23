@@ -1,0 +1,57 @@
+{% extends 'index.html' %}
+
+{% load static %}
+
+{% block title %}
+  actualizar usuario
+{% endblock %}
+
+<head>
+
+</head>
+{% block content %}
+<form action="" method="POST">
+    {% csrf_token %}
+    <td><label for="tipo_doc">Tipo de documento:</label></td>
+    <td> 
+      <select id="tipo_doc" name="tipo_doc" value="{{usuario.tipo_doc}}" required>
+        <option value="ti">TI</option>
+        <option value="cc">CC</option>
+        <option value="ce">CE</option>
+        <option value="otro">OTro</option>
+      </select>
+    </td>
+  </td>
+</tr>
+<tr>
+    <td><label for="num_doc">Número de Documento:</label></td>
+    <td><input type="text" id="num_doc" name="num_doc" value="{{usuario.num_doc}}" required></td>
+</tr>
+<tr>
+    <td><label for="first_name">Nombre:</label></td>
+    <td><input type="text" id="first_name" name="first_name" value="{{usuario.first_name}}" required></td>
+</tr>
+<tr>
+    <td><label for="last_name">Apellido:</label></td>
+    <td><input type="text" id="last_name" name="last_name" value="{{usuario.last_name}}" required></td>
+</tr>
+<tr>
+    <td><label for="username">Nombre de Usuario:</label></td>
+    <td><input type="text" id="username" name="username" value="{{usuario.username}}" required></td>
+</tr>
+<tr>
+    <td><label for="email">Correo Electrónico:</label></td>
+    <td><input type="email" id="email" name="email" value="{{usuario.email}}" required></td>
+</tr>
+<tr>
+    <td><label for="password">Contraseña:</label></td>
+    <td><input type="password" id="password" name="password" value="{{usuario.password}}" required></td>
+</tr>
+<tr>
+    <td><label for="telefono">Teléfono:</label></td>
+    <td><input type="tel" id="telefono" name="telefono" value="{{usuario.telefono}}"required></td>
+</tr>
+</table>
+<button type="submit">Guardar Usuario</button>
+</form>
+{% endblock %}

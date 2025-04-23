@@ -1,0 +1,45 @@
+{% load static %}
+
+{% block title %}Novedades{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/novedades.css' %}">
+<link rel="icon" type="image/x-icon" href="{% static 'img/logo.proyect.jpg' %}">
+{% endblock %}
+
+{% block content %}
+<!-- Enlace para ver más novedades -->
+<a href="{% url 'novedades' %}">Ver Novedades</a>
+
+<div class="novedades-container">
+  <h1>Novedades</h1>
+
+  <div class="novedades-grid">
+    
+    <div class="novedad-card">
+      <div class="icon" aria-hidden="true">
+        <svg width="40" height="40" viewBox="0 0 24 24" fill="none">
+          <path d="M4 4H20V20H4V4Z" stroke="#333" stroke-width="2"/>
+          <path d="M4 8H20" stroke="#333" stroke-width="2"/>
+          <path d="M8 4V8" stroke="#333" stroke-width="2"/>
+        </svg>
+      </div>
+      <h2 class="nov-title">Novedad Académica</h2>
+      <p class="nov-description">Información actualizada sobre cursos y notas.</p>
+    </div>
+
+    <div class="novedad-card" onclick="toggleDetails(this)">
+      <div class="icon" aria-hidden="true">⚖️</div>
+      <h2 class="nov-title">Novedad Disciplinaria</h2>
+      <p>Conoce las faltas que has cometido durante el semestre o el año.</p>
+    </div>
+
+    <div class="novedad-card">
+      <div class="icon" aria-hidden="true">🏢</div>
+      <h2 class="nov-title">Novedad de Ambiente</h2>
+      <p>Aquí podrás mostrar las novedades de un ambiente y los daños que tengan.</p>
+    </div>
+
+  </div>
+</div>
+{% endblock %}

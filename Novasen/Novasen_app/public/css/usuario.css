@@ -1,0 +1,180 @@
+body {
+  margin: 0;
+  padding: 0;
+  height: 100%;
+  background-size: cover;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #afbbb2;
+  color: #000000;
+}
+
+/* Encabezado */
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: linear-gradient(to right, #024405,#024405);
+  padding: 10px 20px;
+  position: relative;
+}
+
+
+.logo-proyecto {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  padding: 0;
+ 
+}
+
+.logo-proyecto img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+  
+}
+
+
+.header-title h2 {
+  color: white;
+  font-weight: 600;
+  justify-content: center;
+  justify-content: flex-start;
+}
+
+.nav-bar {
+  display: flex;
+  align-items: center;
+}
+
+.nav-bar ul {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+}
+
+.nav-bar ul li a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.nav-bar ul li a:hover {
+  color: #3aff13;
+}
+
+/* Estilo hamburguesa */
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  margin-left: 20px;
+}
+
+.menu-toggle span {
+  height: 3px;
+  width: 25px;
+  background-color: white;
+  margin: 4px 0;
+}
+
+/* Responsive navbar */
+@media screen and (max-width: 768px) {
+  .nav-bar ul {
+    display: none;
+    flex-direction: column;
+    background-color: #000000;
+    position: absolute;
+    top: 60px;
+    right: 0;
+    width: 200px;
+    padding: 10px;
+  }
+
+  .nav-bar ul.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
+}
+
+/* Título principal */
+.titulo h1 {
+  text-align: center;
+  margin: 25px 1px;
+  color: #fff0f0;
+}
+
+/* Formulario */
+form {
+  max-width: 1000px; /* Aumentado desde 800px */
+  margin: auto;
+  background-color: white;
+  padding: 60px; /* Aumentado desde 30px */
+  border-radius: 10px;
+  box-shadow: 0px 6px 16px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 20px;
+  margin-left: -1%; 
+  margin-right: 2% ;
+}
+
+label {
+  display: block;
+  font-weight: 600;
+  margin-bottom: 10px;
+  font-size: 18px; /* Aumentado */
+  
+}
+
+input, select {
+  width: 100%;
+  padding: 14px; /* Aumentado */
+
+  border-radius: 8px; /* Aumentado */
+  font-size: 18px; /* Aumentado */
+}
+
+button {
+  width: 100%;
+  padding: 16px; /* Aumentado */
+  background-color: #157525;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 18px; /* Aumentado */
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+button:hover {
+  background-color: #0e7913;
+}
+
+/* Diseño en columnas */
+.izquierda, .derecha, .derechas {
+  width: 48%;
+  float: left;
+}
+
+.derechas {
+  clear: both;
+  width: 100%;
+}
+
+@media (max-width: 768px) {
+  .izquierda, .derecha {
+    width: 100%;
+    float: none;
+  }
+}

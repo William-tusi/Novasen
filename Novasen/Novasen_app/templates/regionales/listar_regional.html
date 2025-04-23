@@ -1,0 +1,33 @@
+{% extends 'base.html' %}
+
+{% load static %}
+
+{% block title %}
+    Listar de mobiliaria
+{% endblock %}
+
+<head>
+</head>
+
+{% block content %}
+
+<table>
+    <thead>
+        <tr>
+            <th>nit</th>
+            <th>nombre</th>
+            <th>ciudad</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for r in regional %}
+        <tr>
+            <td>{{ r.nit }}</td>
+            <td>{{ r.nombre }}</td>
+            <td>{{ r.ciudad }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+
+{% endblock %}

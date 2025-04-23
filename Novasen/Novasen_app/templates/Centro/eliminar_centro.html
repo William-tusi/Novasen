@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h2>¿Estás seguro que deseas eliminar este centro?</h2>
+<p>{{ object.nombre }}</p>
+
+<form method="post">
+  {% csrf_token %}
+  <button type="submit">Confirmar eliminación</button>
+  <a href="{% url 'listar_regionales' %}">Cancelar</a>
+</form>
+{% endblock %}

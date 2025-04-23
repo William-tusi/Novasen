@@ -1,0 +1,11 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h2>Detalles del Centro</h2>
+  <p><strong>Nombre:</strong> {{ centro.nombre }}</p>
+  <p><strong>Descripción:</strong> {{ centro.descripcion }}</p>
+
+  <a href="{% url 'actualizar_centro' centro.id %}">Editar</a> |
+  <a href="{% url 'eliminar_centro' centro.id %}">Eliminar</a> |
+  <a href="{% url 'listar_centros' %}">Volver a la lista</a>
+{% endblock %}
