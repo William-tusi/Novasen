@@ -1,1 +1,1 @@
-web: gunicorn Novasen.wsgi --log-file -
+gunicorn Novasen.wsgi:application --log-file -
