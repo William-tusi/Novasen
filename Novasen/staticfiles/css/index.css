@@ -1,0 +1,235 @@
+/* ===== VARIABLES GLOBALES ===== */
+:root {
+    --color-primary: #19c027;
+    --color-secondary: linear-gradient(to right, #3bac44, #054908);
+    --color-background: #ffffff;
+    --color-text: #2c3e50;
+    --color-footer: linear-gradient(to right, #3bac44,  #054908);
+    --color-accent: #0b9729;
+    --transition-speed: 0.3s;
+}
+header {
+    background: var(--color-secondary);
+}
+
+footer {
+    background: var(--color-footer); /* background, no background-color */
+    color: rgb(0, 0, 0);
+    padding: 10px;
+    text-align: center;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+    font-size: 17px;
+}
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+body {
+    background-color: var(--color-background);
+    color: var(--color-text);
+    line-height: 1.6;
+}
+
+/* ===== HEADER ===== */
+header {
+    display: flex;
+    justify-content: space-between; /* separa logo de menú, por ejemplo */
+    align-items: center;
+    background: var(--color-secondary);
+    padding: 10px;
+}
+
+
+.logo {
+    display: flex;
+    justify-content: flex-end; /* Esto empuja el contenido a la derecha */
+    align-items: center;
+    padding: 10px 30px; /* Espaciado interno opcional */
+}
+
+.logo img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+/* ===== MENÚ HAMBURGUESA ===== */
+.menu img {
+    width: 85px;
+    position: absolute;
+    top: 30px;
+    right: 35px;
+    cursor: pointer;
+}
+
+/* ============================
+   BARRA DE NAVEGACIÓN (NAV)
+============================ */
+nav {
+    display: flex; /* Usamos flexbox para alinear el contenido horizontalmente */
+    justify-content: center; /* Centra los elementos hijos (el menú) horizontalmente */
+    align-items: center; /* Alinea verticalmente el contenido dentro del nav */
+    margin-top: 1rem; /* Espacio superior para separar del contenido anterior */
+    padding: 1rem 0; /* Relleno arriba y abajo, sin afectar submenús */
+    background-color: var(--color-secondary); /* Fondo del nav usando una variable CSS */
+    z-index: 5; /* Coloca el nav por encima de otros elementos si se superponen */
+}
+
+/* ============================
+   LISTA DEL MENÚ PRINCIPAL
+============================ */
+nav ul.menu {
+    display: flex; /* Hace que los ítems de la lista se alineen en fila */
+    flex-wrap: wrap; /* Permite que los ítems bajen a otra línea si no caben */
+    gap: 2rem; /* Espaciado horizontal entre los ítems del menú */
+    margin: 30px; /* Elimina margen por defecto del <ul> */
+    padding: 0; /* Elimina relleno por defecto del <ul> */
+    list-style: none; /* Elimina los puntos de la lista */
+}
+
+/* ============================
+   ELEMENTOS INDIVIDUALES DEL MENÚ
+============================ */
+.menu > li {
+    position: relative; /* Necesario para posicionar submenús si se usan */
+}
+
+/* ============================
+   ENLACES DEL MENÚ
+============================ */
+.menu a {
+    display: inline-block; /* Permite aplicar paddings y efectos de transición */
+    color: #000000; /* Color de texto por defecto (blanco) */
+    background-color: var(--color-primary); /* Color de fondo principal desde variable */
+    padding: 12px 20px; /* Espaciado interno para dar cuerpo al botón */
+    text-decoration: none; /* Elimina el subrayado de los enlaces */
+    font-weight: 600; /* Texto más grueso para destacar */
+    text-transform: uppercase; /* Convierte el texto a mayúsculas */
+    border-radius: 8px; /* Bordes redondeados para los botones */
+    transition: background-color var(--transition-speed), 
+                transform var(--transition-speed),
+                color var(--transition-speed); /* Suaviza los cambios de estilo */
+}
+
+/* ============================
+   EFECTOS AL PASAR EL CURSOR / ENFOQUE
+============================ */
+.menu a:hover,
+.menu a:focus {
+    background-color: var(--color-accent); /* Cambia a un color de acento al interactuar */
+    color: #000; /* Texto en negro para contrastar con el fondo claro */
+    transform: translateY(-2px); /* Eleva ligeramente el botón al hacer hover */
+}
+
+
+/* ===== SUBMENÚS ===== */
+.menu ul {
+    display: none;
+    position: absolute;
+    top: calc(100% + 10px); /* Baja el submenú 10px por debajo del menú principal */
+    left: 0;
+    background-color: var(--color-primary);
+    width: 220px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.25);
+    border-radius: 8px;
+    padding: 8px 0;
+    z-index: 100; /* Muy por encima del resto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(0);
+    transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.menu li:hover > ul {
+    display: block;
+    opacity: 1;
+    visibility: visible;
+}
+
+.menu ul li {
+    width: 100%;
+}
+
+.menu ul li a {
+    padding: 12px 18px;
+    color: #ffffff;
+    display: block;
+    text-decoration: none;
+    font-size: 16px;
+    background-color: var(--color-primary);
+    
+}
+
+.menu ul li a:hover {
+    background-color: var(--color-accent);
+    padding-left: 24px;
+    border-radius: 0 20px 20px 0;
+    color: #000;
+}
+
+
+
+
+
+/* ===== CONTENIDO PRINCIPAL ===== */
+main {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+
+
+#home h1 {
+    color: var(--color-primary);
+    font-size: 2.5rem;
+}
+
+#home p {
+    font-size: 1.2rem;
+}
+.fa-home {
+    font-size: 34px; /* Cambia el tamaño del ícono */
+    color: #000000;  /* Cambia el color del ícono */
+}
+
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 768px) {
+    nav ul.menu {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .menu ul {
+        position: static;
+        width: 100%;
+    }
+
+    .busqueda {
+        width: 90%;
+    }
+
+    .contenedor {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .formulario {
+        width: 100%;
+    }
+}
+
+
+
