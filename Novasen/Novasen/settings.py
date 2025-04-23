@@ -12,6 +12,7 @@ https://docs.djangoproject.com/en/5.2/ref/settings/
 
 from pathlib import Path
 import os
+import dj_database_url
 
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
@@ -29,7 +30,7 @@ SECRET_KEY = os.enviroment.get('SECRET_KEY', default='hsjhgasdghadjhsjh')
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['novasen.onrender.com']
 
 RENDER_EXTERNAL_HOSTNAME = os.environ.get ('RENDER_EXTERNAL_HOSTNAME')
 if RENDER_EXTERNAL_HOSTNAME:
@@ -105,14 +106,10 @@ sys.setrecursionlimit(1500)
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
 
 DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.mysql',
-        'NAME':'Novasen_db',
-        'HOST':'localhost',
-        'USER':'root',
-        'PASSWORD':'',
-        'PORT':'3306',
-    }
+    'default': dj_database_url.config(
+        default=os.environ.get('DATABASE_URL'),
+        conn_max_age=600,  # para mejor rendimiento
+    )
 }
 
 
