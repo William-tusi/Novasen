@@ -1,0 +1,1 @@
+web: gunicorn Novasen.wsgi --log-file -

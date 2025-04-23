@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: Novasen
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn Novasen.wsgi --log-file -
+    envVars:
+      - key: DJANGO_SETTINGS_MODULE
+        value: Novasen.settings
+      - key: PYTHON_VERSION
+        value: 3.11.9
+      - key: hsjhgasdghadjhsjh
+        generateValue: true
+      - key: DEBUG
+        value: "False"
