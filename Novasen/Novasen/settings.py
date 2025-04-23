@@ -25,7 +25,7 @@ AUTH_USER_MODEL = 'Novasen_app.Usuario'
 
 # SECURITY WARNING: keep the secret key used in production secret!
 
-SECRET_KEY = os.enviroment.get('SECRET_KEY', default='hsjhgasdghadjhsjh')
+SECRET_KEY = os.environ.get('SECRET_KEY', default='hsjhgasdghadjhsjh')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = 'RENDER' not in os.environ
